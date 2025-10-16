@@ -44,22 +44,3 @@ C端 - 用户端
 商业智能(BI)应用: 项目的核心价值在于其后台的数据统计与分析能力，将抽象的销售数据转化为可指导运营决策的可视化图表。
 
 高并发架构: 通过引入Redis和RabbitMQ，对系统性能进行了优化，确保在高并发场景下的稳定性和良好用户体验。
-
-如何运行 (Setup)
-克隆仓库: git clone [你的仓库URL]
-
-后端:
-
-导入backend项目到IDE (如IntelliJ IDEA)。
-
-修改 application.yml 中的数据库和Redis连接信息。
-
-运行 BackendApplication.java。
-
-前端:
-
-进入 frontend 目录: cd frontend
-
-安装依赖: npm install
-
-启动项目: npm run serve
