@@ -16,9 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
-/**
- * 工作台
- */
+
 @RestController
 @RequestMapping("/admin/workspace")
 @Tag(name = "工作台相关接口")
@@ -28,10 +26,7 @@ public class WorkspaceController {
     @Autowired
     private WorkspaceService workspaceService;
 
-    /**
-     * 工作台今日数据查询
-     * @return
-     */
+
     @GetMapping("/businessData")
     @Operation(summary = "工作台今日数据查询")
     public Result<BusinessDataVO> businessData() {
@@ -41,10 +36,7 @@ public class WorkspaceController {
         return Result.success(businessDataVO);
     }
 
-    /**
-     * 查询订单管理数据
-     * @return
-     */
+
     @GetMapping("/overviewOrders")
     @Operation(summary = "查询订单管理数据")
     public Result<OrderOverViewVO> orderOverView() {
@@ -52,10 +44,7 @@ public class WorkspaceController {
         return Result.success(orderOverViewVO);
     }
 
-    /**
-     * 查询菜品总览
-     * @return
-     */
+
     @GetMapping("/overviewDishes")
     @Operation(summary = "查询菜品总览")
     public Result<DishOverViewVO> dishOverView() {
@@ -63,10 +52,7 @@ public class WorkspaceController {
         return Result.success(dishOverViewVO);
     }
 
-    /**
-     * 查询套餐总览
-     * @return
-     */
+    
     @GetMapping("/overviewSetmeals")
     @Operation(summary = "查询套餐总览")
     public Result<SetmealOverViewVO> setmealOverView() {
