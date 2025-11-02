@@ -39,12 +39,7 @@ public class ReportServiceImpl implements ReportService {
     @Autowired
     private WorkspaceService workspaceService;
 
-    /**
-     * 统计指定时间内的营业额数据
-     * @param begin
-     * @param end
-     * @return
-     */
+
     public TurnoverReportVO getTurnoverStatistics(LocalDate begin, LocalDate end) {
         // 存放从begin到end之间的每天对应的日期
         List<LocalDate> dateList = new ArrayList<>();
@@ -75,12 +70,7 @@ public class ReportServiceImpl implements ReportService {
                 .build();
     }
 
-    /**
-     * 统计指定时间内的用户数据
-     * @param begin
-     * @param end
-     * @return
-     */
+
     public UserReportVO getUserStatistics(LocalDate begin, LocalDate end) {
         List<LocalDate> dateList = new ArrayList<>();
         dateList.add(begin);
@@ -113,12 +103,7 @@ public class ReportServiceImpl implements ReportService {
                 .build();
     }
 
-    /**
-     * 统计指定时间内的订单数据
-     * @param begin
-     * @param end
-     * @return
-     */
+
     public OrderReportVO getOrderStatistics(LocalDate begin, LocalDate end) {
         List<LocalDate> dateList = new ArrayList<>();
         dateList.add(begin);
@@ -161,12 +146,7 @@ public class ReportServiceImpl implements ReportService {
                 .build();
     }
     
-    /**
-     * 统计指定时间内的销量排名前10
-     * @param begin
-     * @param end
-     * @return
-     */
+
     public SalesTop10ReportVO getSalesTop10(LocalDate begin, LocalDate end) {
         LocalDateTime beginTime = LocalDateTime.of(begin, LocalTime.MIN);
         LocalDateTime endTime = LocalDateTime.of(end, LocalTime.MAX);
@@ -186,10 +166,7 @@ public class ReportServiceImpl implements ReportService {
                 .build();
     }
     
-    /**
-     * 导出最近30天的运营数据报表
-     * @param response
-     */
+
     public void exportBusinessData(HttpServletResponse response) {
         // 1. 查询数据库，获取营业数据
         LocalDate dateBegin = LocalDate.now().minusDays(30);
@@ -244,13 +221,7 @@ public class ReportServiceImpl implements ReportService {
         }
     }
     
-    /**
-     * 根据条件统计订单数量
-     * @param begin
-     * @param end
-     * @param status
-     * @return
-     */
+
     private Integer getOrderCount(LocalDateTime begin, LocalDateTime end, Integer status) {
         Map<String, Object> map = new HashMap<>();
         map.put("begin", begin);
