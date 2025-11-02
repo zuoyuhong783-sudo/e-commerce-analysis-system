@@ -32,12 +32,7 @@ public class WorkspaceServiceImpl implements WorkspaceService {
     @Autowired
     private SetmealMapper setmealMapper;
 
-    /**
-     * 根据时间段统计营业数据
-     * @param begin
-     * @param end
-     * @return
-     */
+
     public BusinessDataVO getBusinessData(LocalDateTime begin, LocalDateTime end) {
         Map<String, Object> map = new HashMap<>();
         map.put("begin", begin);
@@ -77,10 +72,7 @@ public class WorkspaceServiceImpl implements WorkspaceService {
     }
 
 
-    /**
-     * 查询订单管理数据
-     * @return
-     */
+
     public OrderOverViewVO getOrderOverView() {
         Map<String, Object> map = new HashMap<>();
         map.put("begin", LocalDateTime.now().with(LocalTime.MIN));
@@ -114,10 +106,7 @@ public class WorkspaceServiceImpl implements WorkspaceService {
                 .build();
     }
 
-    /**
-     * 查询菜品总览
-     * @return
-     */
+
     public DishOverViewVO getDishOverView() {
         Map<String, Object> map = new HashMap<>();
         
@@ -133,10 +122,7 @@ public class WorkspaceServiceImpl implements WorkspaceService {
                 .build();
     }
 
-    /**
-     * 查询套餐总览
-     * @return
-     */
+
     public SetmealOverViewVO getSetmealOverView() {
         Map<String, Object> map = new HashMap<>();
         
