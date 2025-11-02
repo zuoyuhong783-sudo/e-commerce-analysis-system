@@ -18,9 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import jakarta.servlet.http.HttpServletResponse;
 import java.time.LocalDate;
 
-/**
- * 数据统计相关接口
- */
+
 @RestController
 @RequestMapping("/admin/report")
 @Tag(name = "数据统计相关接口")
@@ -30,13 +28,7 @@ public class ReportController {
     @Autowired
     private ReportService reportService;
 
-    /**
-     * 营业额统计
-     *
-     * @param begin
-     * @param end
-     * @return
-     */
+
     @GetMapping("/turnoverStatistics")
     @Operation(summary = "营业额统计")
     public Result<TurnoverReportVO> turnoverStatistics(
@@ -47,13 +39,7 @@ public class ReportController {
         return Result.success(turnoverReportVO);
     }
 
-    /**
-     * 用户统计
-     *
-     * @param begin
-     * @param end
-     * @return
-     */
+
     @GetMapping("/userStatistics")
     @Operation(summary = "用户统计")
     public Result<UserReportVO> userStatistics(
@@ -64,13 +50,7 @@ public class ReportController {
         return Result.success(userReportVO);
     }
 
-    /**
-     * 订单统计
-     *
-     * @param begin
-     * @param end
-     * @return
-     */
+
     @GetMapping("/ordersStatistics")
     @Operation(summary = "订单统计")
     public Result<OrderReportVO> orderStatistics(
@@ -81,13 +61,7 @@ public class ReportController {
         return Result.success(orderReportVO);
     }
 
-    /**
-     * 销量排名top10
-     *
-     * @param begin
-     * @param end
-     * @return
-     */
+
     @GetMapping("/top10")
     @Operation(summary = "销量排名top10")
     public Result<SalesTop10ReportVO> top10(
@@ -98,10 +72,7 @@ public class ReportController {
         return Result.success(salesTop10ReportVO);
     }
     
-    /**
-     * 导出运营数据报表
-     * @param response
-     */
+
     @GetMapping("/export")
     @Operation(summary = "导出运营数据报表")
     public void export(HttpServletResponse response){
