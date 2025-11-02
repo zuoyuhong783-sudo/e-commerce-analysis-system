@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.1.5</version> <!-- 使用一个稳定的Spring Boot 3.x版本 -->
+        <version>3.1.5</version> 
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
@@ -58,14 +58,14 @@
         </dependency>
         -->
 
-        <!-- *********** 这是关键的修改 *********** -->
+        
         <!-- SpringDoc OpenAPI (Swagger) for Spring Boot 3.x -->
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
             <version>2.2.0</version>
         </dependency>
-        <!-- ************************************ -->
+      
         
         <!-- Apache POI for Excel -->
         <dependency>
